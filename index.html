@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio — Canva Code</title>
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Your styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[var(--bg)] text-[var(--text)]">
+  <!-- Background decoration -->
+  <div aria-hidden="true" class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="orb orb-blue"></div>
+    <div class="orb orb-green delay"></div>
+    <div class="orb orb-pink delay2"></div>
+  </div>
+
+  <!-- Top Nav -->
+  <header class="sticky top-0 z-50">
+    <div class="glass shadow-soft">
+      <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-2">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-tr from-[var(--brand2)] to-[var(--brand3)] text-slate-900 font-extrabold">A</span>
+          <span class="font-semibold tracking-wide">My Portfolio</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-[15px]">
+          <a href="#about" class="hover:text-[var(--brand2)] transition">About</a>
+          <a href="#skills" class="hover:text-[var(--brand2)] transition">Skills</a>
+          <a href="#projects" class="hover:text-[var(--brand2)] transition">Projects</a>
+          <a href="#achievements" class="hover:text-[var(--brand2)] transition">Achievements</a>
+          <a href="#contact" class="hover:text-[var(--brand2)] transition">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="themeToggle" class="glass shadow-soft text-sm px-3 py-2 rounded-lg hover:opacity-90 transition ring-focus" aria-label="Toggle theme">
+            <span id="themeIcon">🌙</span>
+          </button>
+          <button id="mobileMenuBtn" class="md:hidden glass px-3 py-2 rounded-lg">☰</button>
+        </div>
+      </nav>
+      <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+        <div class="px-6 py-3 flex flex-col gap-2">
+          <a href="#about" class="py-2 hover:text-[var(--brand2)]">About</a>
+          <a href="#skills" class="py-2 hover:text-[var(--brand2)]">Skills</a>
+          <a href="#projects" class="py-2 hover:text-[var(--brand2)]">Projects</a>
+          <a href="#achievements" class="py-2 hover:text-[var(--brand2)]">Achievements</a>
+          <a href="#contact" class="py-2 hover:text-[var(--brand2)]">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="container mx-auto px-6 pt-16 md:pt-24 pb-16">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs glass shadow-soft">
+          <span class="w-2 h-2 rounded-full bg-[var(--brand2)]"></span>
+          Open to opportunities
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Hi, I’m <span class="bg-gradient-to-r from-[var(--brand2)] via-[var(--brand3)] to-[var(--brand1)] bg-clip-text text-transparent">Ashish Komuravelly</span>
+        </h1>
+        <p class="text-[var(--muted)] max-w-xl">
+          Frontend-focused developer crafting delightful, accessible experiences. I love clean design, clear structure, and smooth interactions.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#projects" class="bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 font-semibold px-5 py-3 rounded-lg hover:opacity-90 transition">See Projects</a>
+          <button id="downloadResume" class="glass shadow-soft px-5 py-3 rounded-lg hover:opacity-90 transition">Download Resume</button>
+          <a href="#contact" class="glass shadow-soft px-5 py-3 rounded-lg hover:opacity-90 transition">Contact Me</a>
+        </div>
+        <div class="flex items-center gap-4 text-sm text-[var(--muted)]">
+          <span class="flex items-center gap-2"><span class="text-[var(--brand2)]">✔</span> Pixel perfect</span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-[var(--brand2)] via-[var(--brand3)] to-[var(--brand1)] opacity-40 blur-2xl"></div>
+        <div class="relative glass shadow-soft rounded-3xl p-6 md:p-8">
+          <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-900 to-[var(--fg)] flex items-center justify-center">
+            <!-- Simple SVG avatar -->
+            <svg width="160" height="160" viewBox="0 0 200 200" class="drop-shadow">
+              <circle cx="100" cy="70" r="40" fill="#60a5fa"/>
+              <rect x="45" y="110" width="110" height="70" rx="20" fill="#6ee7b7"/>
+            </svg>
+          </div>
+          <div class="mt-4 grid grid-cols-1 gap-3 text-center">
+            <div class="glass rounded-xl p-3">
+              <div class="text-lg font-semibold">5</div>
+              <div class="text-xs text-[var(--muted)]">Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      <div class="md:col-span-1">
+        <h2 class="text-3xl font-bold">About</h2>
+        <p class="text-[var(--muted)] mt-2">A quick snapshot of who I am and how I work.</p>
+      </div>
+      <div class="md:col-span-2 space-y-6">
+        <div class="glass shadow-soft rounded-2xl p-6 leading-relaxed">
+          I turn ideas into engaging products with a mix of solid fundamentals and a love for details. I move quickly, communicate clearly, and keep users at the center.
+        </div>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="glass shadow-soft rounded-2xl p-5">
+            <div class="text-sm text-[var(--muted)]">Focus</div>
+            <div class="font-semibold mt-1">Frontend Engineering</div>
+          </div>
+          <div class="glass shadow-soft rounded-2xl p-5">
+            <div class="text-sm text-[var(--muted)]">Core Values</div>
+            <div class="font-semibold mt-1">Clarity & Craft</div>
+          </div>
+          <div class="glass shadow-soft rounded-2xl p-5">
+            <div class="text-sm text-[var(--muted)]">Location</div>
+            <div class="font-semibold mt-1">Remote-friendly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container mx-auto px-6 py-16">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <h2 class="text-3xl font-bold">Skills</h2>
+        <p class="text-[var(--muted)] mt-2">A blend of design sense and engineering.</p>
+      </div>
+      <div class="hidden sm:flex items-center gap-2 text-xs glass shadow-soft px-3 py-2 rounded-lg">
+        <span class="w-2 h-2 bg-[var(--brand2)] rounded-full"></span> Always learning
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Skill card -->
+      <div class="glass shadow-soft rounded-2xl p-6">
+        <div class="flex items-center justify-between">
+          <span class="font-semibold">Frontend</span>
+          <span class="text-[var(--muted)] text-sm">Expert</span>
+        </div>
+        <div class="mt-4 space-y-4">
+          <div>
+            <div class="flex justify-between text-sm"><span>HTML/CSS</span><span>95%</span></div>
+            <div class="h-2 rounded-full bg-white/10 overflow-hidden mt-2">
+              <div class="h-full w-[95%] bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)]"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span>JavaScript</span><span>90%</span></div>
+            <div class="h-2 rounded-full bg-white/10 overflow-hidden mt-2">
+              <div class="h-full w-[90%] bg-gradient-to-r from-[var(--brand2)] to-[var(--brand1)]"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span>Accessibility</span><span>85%</span></div>
+            <div class="h-2 rounded-full bg-white/10 overflow-hidden mt-2">
+              <div class="h-full w-[85%] bg-gradient-to-r from-[var(--brand3)] to-[var(--brand2)]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass shadow-soft rounded-2xl p-6">
+        <div class="flex items-center justify-between">
+          <span class="font-semibold">Backend & Tools</span>
+          <span class="text-[var(--muted)] text-sm">Intermediate</span>
+        </div>
+        <div class="mt-4 space-y-4">
+          <div class="flex items-center justify-between text-sm"><span>Node.js</span><span>70%</span></div>
+          <div class="h-2 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-[70%] bg-gradient-to-r from-[var(--brand1)] to-[var(--brand2)]"></div></div>
+
+          <div class="mt-4 flex items-center justify-between text-sm"><span>MySQL</span><span>65%</span></div>
+          <div class="h-2 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-[65%] bg-gradient-to-r from-[var(--brand3)] to-[var(--brand1)]"></div></div>
+
+          <div class="mt-4 flex items-center justify-between text-sm"><span>Git & CI</span><span>75%</span></div>
+          <div class="h-2 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-[75%] bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)]"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="container mx-auto px-6 py-16">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+      <div>
+        <h2 class="text-3xl font-bold">Projects</h2>
+        <p class="text-[var(--muted)] mt-2">A few favorites. Filter by type.</p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button data-filter="all" class="filter-btn bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 px-4 py-2 rounded-lg">All</button>
+        <button data-filter="web" class="filter-btn glass px-4 py-2 rounded-lg">Web</button>
+        <button data-filter="ui" class="filter-btn glass px-4 py-2 rounded-lg">UI</button>
+        <button data-filter="tooling" class="filter-btn glass px-4 py-2 rounded-lg">Tooling</button>
+      </div>
+    </div>
+
+    <div id="projectGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <article class="project-card glass shadow-soft rounded-2xl overflow-hidden hover:scale-[1.01] transition" data-tags="web ui">
+        <div class="h-40 bg-gradient-to-br from-[#0ea5e9] to-[#8b5cf6]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Landing Page Revamp</h3>
+            <span class="text-xs text-[var(--muted)]">web • ui</span>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm text-[var(--muted)]">A conversion-focused redesign with smooth interactions and clear sections.</p>
+            <ul class="text-xs text-[var(--muted)] list-disc list-inside space-y-1">
+              <li>Hero, features, pricing, FAQ</li>
+              <li>Sticky nav and smooth scroll</li>
+              <li>Responsive layout and accessibility checks</li>
+            </ul>
+          </div>
+          <div class="flex gap-2">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">HTML</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">CSS</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">JS</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="open-modal bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 text-sm px-3 py-2 rounded-lg" data-title="Landing Page Revamp" data-desc="A full redesign focused on clarity, speed, and conversions, featuring modular sections and playful micro-interactions.">Preview</button>
+            <a class="glass text-sm px-3 py-2 rounded-lg" href="#" onclick="alert('Demo link'); return false;">Live</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="project-card glass shadow-soft rounded-2xl overflow-hidden hover:scale-[1.01] transition" data-tags="tooling">
+        <div class="h-40 bg-gradient-to-br from-[#10b981] to-[#06b6d4]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Build Tool Starter</h3>
+            <span class="text-xs text-[var(--muted)]">tooling</span>
+          </div>
+          <div class="space-y-2">
+          <p class="text-sm text-[var(--muted)]">A tiny starter with instant hot reload, linting and formatting.</p>
+          <ul class="text-xs text-[var(--muted)] list-disc list-inside space-y-1">
+            <li>Pre-configured scripts</li>
+            <li>Recommended extensions and settings</li>
+            <li>Sample folder structure</li>
+          </ul>
+        </div>
+          <div class="flex gap-2">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Vite</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">ESLint</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="open-modal bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 text-sm px-3 py-2 rounded-lg" data-title="Build Tool Starter" data-desc="A minimal setup for fast development with sensible defaults, preconfigured scripts, and documentation.">Preview</button>
+            <a class="glass text-sm px-3 py-2 rounded-lg" href="#" onclick="alert('Demo link'); return false;">Repo</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="project-card glass shadow-soft rounded-2xl overflow-hidden hover:scale-[1.01] transition" data-tags="web">
+        <div class="h-40 bg-gradient-to-br from-[#f59e0b] to-[#ef4444]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Dashboard Kit</h3>
+            <span class="text-xs text-[var(--muted)]">web</span>
+          </div>
+          <div class="space-y-2">
+          <p class="text-sm text-[var(--muted)]">A flexible admin dashboard with charts, themes, and widgets.</p>
+          <ul class="text-xs text-[var(--muted)] list-disc list-inside space-y-1">
+            <li>Light/Dark mode toggle</li>
+            <li>Cards for KPIs and activity</li>
+            <li>Area/Bar charts with filters</li>
+          </ul>
+        </div>
+          <div class="flex gap-2">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Charts</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Theme</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="open-modal bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 text-sm px-3 py-2 rounded-lg" data-title="Dashboard Kit" data-desc="A customizable admin dashboard template with light/dark modes, cards, and reusable widgets.">Preview</button>
+            <a class="glass text-sm px-3 py-2 rounded-lg" href="#" onclick="alert('Demo link'); return false;">Live</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="project-card glass shadow-soft rounded-2xl overflow-hidden hover:scale-[1.01] transition" data-tags="ui web">
+        <div class="h-40 bg-gradient-to-br from-[#22d3ee] to-[#a78bfa]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Portfolio Generator</h3>
+            <span class="text-xs text-[var(--muted)]">ui • web</span>
+          </div>
+          <div class="space-y-2">
+          <p class="text-sm text-[var(--muted)]">A personal site builder with themes, sections and quick publishing.</p>
+          <ul class="text-xs text-[var(--muted)] list-disc list-inside space-y-1">
+            <li>Theme switcher and presets</li>
+            <li>Drag-and-drop sections</li>
+            <li>One-click publish (demo)</li>
+          </ul>
+        </div>
+          <div class="flex gap-2">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">UI</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Templates</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="open-modal bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 text-sm px-3 py-2 rounded-lg" data-title="Portfolio Generator" data-desc="A multi-theme portfolio generator with drag-and-drop sections, quick publish, and responsive layouts.">Preview</button>
+            <a class="glass text-sm px-3 py-2 rounded-lg" href="#" onclick="alert('Demo link'); return false;">Live</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="project-card glass shadow-soft rounded-2xl overflow-hidden hover:scale-[1.01] transition" data-tags="web ui">
+        <div class="h-40 bg-gradient-to-br from-[#34d399] to-[#60a5fa]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">E-Commerce Mini</h3>
+            <span class="text-xs text-[var(--muted)]">web • ui</span>
+          </div>
+          <div class="space-y-2">
+          <p class="text-sm text-[var(--muted)]">A lightweight shop with product cards, filters and a demo cart.</p>
+          <ul class="text-xs text-[var(--muted)] list-disc list-inside space-y-1">
+            <li>Category and price filters</li>
+            <li>Quick view modal</li>
+            <li>Local cart storage (demo)</li>
+          </ul>
+        </div>
+          <div class="flex gap-2">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">JS</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Design</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="open-modal bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 text-sm px-3 py-2 rounded-lg" data-title="E-Commerce Mini" data-desc="A clean storefront with filters, quick view, and a simple cart demo.">Preview</button>
+            <a class="glass text-sm px-3 py-2 rounded-lg" href="#" onclick="alert('Demo link'); return false;">Live</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-3xl font-bold">Get in touch</h2>
+        <p class="text-[var(--muted)] mt-2">I’ll reply within 1–2 business days.</p>
+
+        <div class="glass shadow-soft rounded-2xl p-6 mt-6">
+          <div class="text-sm font-semibold mb-2">Demo Notice</div>
+          <p class="text-sm text-[var(--muted)]">
+            This is a demo contact form that saves messages in your browser only. For a real inbox, I can help you connect it to a backend later.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <button id="exportMessages" class="glass px-3 py-2 rounded-lg">Export Messages</button>
+            <button id="clearMessages" class="glass px-3 py-2 rounded-lg">Clear Messages</button>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-6">
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/in/ashish-komuravelly-839324287" target="_blank" rel="noopener" class="glass shadow-soft w-10 h-10 grid place-items-center rounded-lg hover:opacity-90">in</a>
+          <a aria-label="GitHub" href="https://github.com/AshishKomuravelly" target="_blank" rel="noopener" class="glass shadow-soft w-10 h-10 grid place-items-center rounded-lg hover:opacity-90">GH</a>
+        </div>
+      </div>
+
+      <form id="contactForm" class="glass shadow-soft rounded-2xl p-6 space-y-4">
+        <div>
+          <label class="block text-sm mb-1">Name</label>
+          <input required id="name" type="text" placeholder="Your name" class="w-full bg-white/5 rounded-lg px-4 py-3 ring-focus">
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Email</label>
+          <input required id="email" type="email" placeholder="you@example.com" class="w-full bg-white/5 rounded-lg px-4 py-3 ring-focus">
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Message</label>
+          <textarea required id="message" rows="5" placeholder="Say hello..." class="w-full bg-white/5 rounded-lg px-4 py-3 ring-focus"></textarea>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button type="submit" class="bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 font-semibold px-5 py-3 rounded-lg">Send Message</button>
+          <a id="mailtoBtn" href="mailto:ashishkomuravelly9@gmail.com" class="bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 font-semibold px-5 py-3 rounded-lg">Email me</a>
+        </div>
+        <p id="formNote" class="text-xs text-[var(--muted)]">Your message will be saved locally in your browser.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="container mx-auto px-6 py-8 text-sm text-[var(--muted)] flex flex-col sm:flex-row gap-4 items-center justify-between">
+      <div>© <span id="year"></span> Ashish Komuravelly. All rights reserved.</div>
+      <div class="flex items-center gap-3">
+        <a href="#home" class="glass px-3 py-2 rounded-lg">Back to top ↑</a>
+        <button id="blogInfo" class="glass px-3 py-2 rounded-lg">Blog & Backend</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center p-6">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative max-w-xl w-full glass shadow-soft rounded-2xl p-6">
+      <div class="flex items-start justify-between gap-6">
+        <div>
+          <h3 id="modalTitle" class="text-xl font-semibold">Project</h3>
+          <p id="modalDesc" class="text-[var(--muted)] mt-2">Details</p>
+        </div>
+        <button id="closeModal" class="glass rounded-lg px-3 py-2">Close</button>
+      </div>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <a href="#" onclick="alert('Demo link'); return false;" class="bg-gradient-to-r from-[var(--brand2)] to-[var(--brand3)] text-slate-900 text-center font-semibold px-4 py-3 rounded-lg">View Live</a>
+        <a href="#" onclick="alert('Demo repo'); return false;" class="glass text-center px-4 py-3 rounded-lg">View Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 hidden">
+    <div class="glass shadow-soft rounded-xl px-4 py-3 text-sm flex items-center gap-2">
+      <span>✅</span><span id="toastMsg">Saved!</span>
+    </div>
+  </div>
+
+  <!-- Your scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
